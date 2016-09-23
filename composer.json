@@ -1,0 +1,45 @@
+{
+    "name": "jim-merioles/laravel-dev-extras",
+    "description": "Extra console commands and helpers, useful when developing web applications using Laravel Framework.",
+    "type": "library",
+    "keywords": [
+        "laravel-dev-extras", "laraveldevextras", "laravel", "dev", "extras", "repository", "repositories", "helpers", "console", "artisan", "jim-merioles", "jimmerioles", "jim", "merioles"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jim Wisley Merioles",
+            "email": "jimwisleymerioles@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "email": "jimwisleymerioles@gmail.com",
+        "issues": "https://github.com/JimMerioles/Laravel-Dev-Extras/issues",
+        "wiki": "https://github.com/JimMerioles/Laravel-Dev-Extras/wiki",
+        "source": "https://github.com/JimMerioles/Laravel-Dev-Extras",
+        "docs": "https://github.com/JimMerioles/Laravel-Dev-Extras/blob/master/readme.md"
+    },
+    "require": {
+        "php": ">=5.6.4",
+        "illuminate/console": "5.3.*",
+        "illuminate/filesystem": "5.3.*",
+        "illuminate/support": "5.3.*"
+    },
+    "require-dev": {
+        "mockery/mockery": "0.9.*",
+        "phpunit/phpunit": "~5.0",
+        "orchestra/testbench": "~3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "JimMerioles\\LaravelDevExtras\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "JimMerioles\\LaravelDevExtrasTests\\": "tests/"
+        }
+    },
+    "prefer-stable": true
+}
