@@ -2,8 +2,6 @@
 
 [![Latest Stable Version](https://poser.pugx.org/jim-merioles/laravel-dev-extras/version)](https://packagist.org/packages/jim-merioles/laravel-dev-extras)
 [![Total Downloads](https://poser.pugx.org/jim-merioles/laravel-dev-extras/downloads)](https://packagist.org/packages/jim-merioles/laravel-dev-extras)
-[![Monthly Downloads](https://poser.pugx.org/jim-merioles/laravel-dev-extras/d/monthly)](https://packagist.org/packages/jim-merioles/laravel-dev-extras)
-[![Daily Downloads](https://poser.pugx.org/jim-merioles/laravel-dev-extras/d/daily)](https://packagist.org/packages/jim-merioles/laravel-dev-extras)
 [![License](https://poser.pugx.org/jim-merioles/laravel-dev-extras/license)](https://packagist.org/packages/jim-merioles/laravel-dev-extras)
 
 Extra artisan console commands and generators that is useful when developing web applications using Laravel Framework.
