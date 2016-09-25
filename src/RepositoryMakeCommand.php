@@ -77,7 +77,7 @@ class RepositoryMakeCommand extends Command
      */
     protected function getPathWithFilename()
     {
-        return $this->getPath() .$this->argument('name').'.php';
+        return $this->getPath() . $this->argument('name') . '.php';
     }
 
     /**
@@ -100,6 +100,6 @@ class RepositoryMakeCommand extends Command
      */
     protected function normalizePath($path)
     {
-        return(ends_with($path, '/')) ? $path : $path . '/';
+        return (ends_with($path, '/')) ? $path : $path . '/';
     }
 }

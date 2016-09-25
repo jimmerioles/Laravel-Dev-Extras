@@ -12,6 +12,7 @@ namespace JimMerioles\LaravelDevExtrasTests;
 
 use Mockery as m;
 use Orchestra\Testbench\TestCase;
+use JimMerioles\LaravelDevExtras\RepositoryMaker;
 use JimMerioles\LaravelDevExtras\RepositoryMakeCommand;
 
 class RepositoryMakeCommandTest extends TestCase
@@ -21,7 +22,7 @@ class RepositoryMakeCommandTest extends TestCase
     public function it_informs_user_if_repository_generation_successful()
     {
         // Mock the dependency class that does the actual creation of repository.
-        $repoMake = m::mock('JimMerioles\LaravelDevExtras\RepositoryMaker');
+        $repoMake = m::mock(RepositoryMaker::class);
 
         // Set expectation, simulate successful creation of repository class by
         // returning true when make() method is called.
@@ -32,7 +33,7 @@ class RepositoryMakeCommandTest extends TestCase
 
         // Set expectation that when info() with specific argument message is
         // called it means creation successful.
-        $command = m::mock(RepositoryMakeCommand::class.'[info]', [$repoMake]);
+        $command = m::mock(RepositoryMakeCommand::class . '[info]', [$repoMake]);
         $command->shouldReceive('info')->once()
             ->with($expectedFullPathWithFilename . ' successfully created!');
 
@@ -46,7 +47,7 @@ class RepositoryMakeCommandTest extends TestCase
     /** @test */
     public function it_errors_to_user_if_repository_generation_fails()
     {
-        $repoMake = m::mock('JimMerioles\LaravelDevExtras\RepositoryMaker');
+        $repoMake = m::mock(RepositoryMaker::class);
 
         // Set expectations, simulate failed creation of repository class by
         // returning false when make() method is called.
@@ -57,7 +58,7 @@ class RepositoryMakeCommandTest extends TestCase
 
         // Set expectation that when error() with specific argument message is
         // called it means creation failed.
-        $command = m::mock(RepositoryMakeCommand::class.'[error]', [$repoMake]);
+        $command = m::mock(RepositoryMakeCommand::class . '[error]', [$repoMake]);
         $command->shouldReceive('error')->once()
             ->with($expectedFullPathWithFilename . ' not created!');
 
@@ -69,7 +70,7 @@ class RepositoryMakeCommandTest extends TestCase
     /** @test */
     public function it_uses_default_path_if_path_option_not_provided()
     {
-        $repoMake = m::mock('JimMerioles\LaravelDevExtras\RepositoryMaker');
+        $repoMake = m::mock(RepositoryMaker::class);
 
         // Set expectations, that make() method should be passed with the correct
         // path(from default path) + file name.
@@ -87,7 +88,7 @@ class RepositoryMakeCommandTest extends TestCase
     /** @test */
     public function it_uses_provided_path_if_path_option_is_provided()
     {
-        $repoMake = m::mock('JimMerioles\LaravelDevExtras\RepositoryMaker');
+        $repoMake = m::mock(RepositoryMaker::class);
 
         // Set expectations, that make() method should be passed with the correct
         // path(from provided option) + name.
@@ -105,7 +106,7 @@ class RepositoryMakeCommandTest extends TestCase
     /** @test */
     public function it_adds_forward_slash_to_path_if_custom_path_provided_does_not_end_in_forward_slash()
     {
-        $repoMake = m::mock('JimMerioles\LaravelDevExtras\RepositoryMaker');
+        $repoMake = m::mock(RepositoryMaker::class);
 
         $expectedCustomPathWithFilename = 'custom/path/FooRepository.php';
         $repoMake->shouldReceive('make')

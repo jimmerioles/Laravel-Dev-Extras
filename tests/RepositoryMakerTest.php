@@ -24,7 +24,7 @@ class RepositoryMakerTest extends TestCase
         // Stub for expected content.
         $expectedContent = file_get_contents(__DIR__ . '/stubs/repository.stub');
 
-        $filesystemMock = m::mock(Filesystem::class.'[put, makeDirectory]');
+        $filesystemMock = m::mock(Filesystem::class . '[put, makeDirectory]');
 
         // Mock FileSystem::makeDirectory() so that it wont create directories when testing.
         $filesystemMock->shouldReceive('makeDirectory');
@@ -48,7 +48,7 @@ class RepositoryMakerTest extends TestCase
         $this->expectException(FileExistsException::class);
         $this->expectExceptionMessage("File already exists: " . $path);
 
-        $mockedFilesystem = m::mock(Filesystem::class.'[exists]');
+        $mockedFilesystem = m::mock(Filesystem::class . '[exists]');
 
         // Simulate file exists to throw the FileExistsException.
         $mockedFilesystem->shouldReceive('exists')->once()

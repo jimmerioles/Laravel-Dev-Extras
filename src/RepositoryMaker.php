@@ -67,17 +67,6 @@ class RepositoryMaker
     }
 
     /**
-     * Extract class name from path with filename.
-     *
-     * @param $path
-     * @return string
-     */
-    protected function getClassNameFromPath($path)
-    {
-        return basename($path, '.php');
-    }
-
-    /**
      * Create repository content from template.
      *
      * @param $name
@@ -114,6 +103,17 @@ class RepositoryMaker
     protected function updateClassName($template, $className)
     {
         return str_replace('ClassName', $className, $template);
+    }
+
+    /**
+     * Extract class name from path with filename.
+     *
+     * @param $path
+     * @return string
+     */
+    protected function getClassNameFromPath($path)
+    {
+        return basename($path, '.php');
     }
 
     /**
