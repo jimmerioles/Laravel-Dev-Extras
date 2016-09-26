@@ -1,6 +1,7 @@
 # Laravel Dev Extras
 
 [![Latest Stable Version](https://poser.pugx.org/jim-merioles/laravel-dev-extras/version)](https://packagist.org/packages/jim-merioles/laravel-dev-extras)
+[![Build Status](https://travis-ci.org/JimMerioles/Laravel-Dev-Extras.svg?branch=master)](https://travis-ci.org/JimMerioles/Laravel-Dev-Extras)
 [![Total Downloads](https://poser.pugx.org/jim-merioles/laravel-dev-extras/downloads)](https://packagist.org/packages/jim-merioles/laravel-dev-extras)
 [![License](https://poser.pugx.org/jim-merioles/laravel-dev-extras/license)](https://packagist.org/packages/jim-merioles/laravel-dev-extras)
 
