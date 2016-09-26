@@ -1,0 +1,12 @@
+# Using PHP.
+language: php
+
+php:
+# Test for PHP v5.6.x build.
+  - 5.6
+# Test for PHP v7.0.x build.
+  - 7.0
+
+install:
+# Install composer dependencies with --no-interaction to avoid halts.
+  - composer install --no-interaction
