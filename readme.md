@@ -47,7 +47,7 @@ DB::listen(function ($event) {
 ```
 
 ####Scenario:
-When tinkering with your database and eloquent models using `$ php artisan tinker`, you might want to dump the sql statements being queried, parameter bindings being passed and time that it took for the query or even just to simply verify if your cache works when no query has been made.
+When tinkering with your database and eloquent models using `$ php artisan tinker`, you might want to listen and dump for sql queries, bindings and execution time to inspect or even just to verify if your cache works when no query has been made.
 
 ####Usage:
 ```
