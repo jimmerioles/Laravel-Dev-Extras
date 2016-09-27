@@ -1,6 +1,6 @@
 {
     "name": "jim-merioles/laravel-dev-extras",
-    "description": "Extra console commands and helpers, useful when developing web applications using Laravel Framework.",
+    "description": "Collection of extra console commands and helpers, useful when developing web applications using Laravel Framework.",
     "type": "library",
     "keywords": [
         "laravel-dev-extras", "laraveldevextras", "laravel", "dev", "extras", "repository", "repositories", "helpers", "console", "artisan", "jim-merioles", "jimmerioles", "jim", "merioles"
