@@ -8,10 +8,10 @@
  * file that was distributed with this source code.
  */
 
-namespace JimMerioles\LaravelDevExtras;
+namespace JimMerioles\LaravelDevExtras\Console\MakeRepository;
 
 use Illuminate\Filesystem\Filesystem;
-use JimMerioles\LaravelDevExtras\Exceptions\FileExistsException;
+use JimMerioles\LaravelDevExtras\Console\MakeRepository\Exceptions\FileExistsException;
 
 /**
  * Class RepositoryMaker

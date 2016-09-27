@@ -11,6 +11,8 @@
 namespace JimMerioles\LaravelDevExtras;
 
 use Illuminate\Support\ServiceProvider;
+use JimMerioles\LaravelDevExtras\Console\MakeRepository\RepositoryMaker;
+use JimMerioles\LaravelDevExtras\Console\MakeRepository\RepositoryMakeCommand;
 
 /**
  * Class LaravelDevExtrasServiceProvider

@@ -8,7 +8,7 @@
  * file that was distributed with this source code.
  */
 
-namespace JimMerioles\LaravelDevExtras\Exceptions;
+namespace JimMerioles\LaravelDevExtras\Console\MakeRepository\Exceptions;
 
 use Exception;
 

@@ -13,8 +13,8 @@ namespace JimMerioles\LaravelDevExtrasTests;
 use Mockery as m;
 use Orchestra\Testbench\TestCase;
 use Illuminate\Filesystem\Filesystem;
-use JimMerioles\LaravelDevExtras\RepositoryMaker;
-use JimMerioles\LaravelDevExtras\Exceptions\FileExistsException;
+use JimMerioles\LaravelDevExtras\Console\MakeRepository\RepositoryMaker;
+use JimMerioles\LaravelDevExtras\Console\MakeRepository\Exceptions\FileExistsException;
 
 class RepositoryMakerTest extends TestCase
 {

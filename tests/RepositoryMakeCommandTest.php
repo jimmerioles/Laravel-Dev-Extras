@@ -12,8 +12,8 @@ namespace JimMerioles\LaravelDevExtrasTests;
 
 use Mockery as m;
 use Orchestra\Testbench\TestCase;
-use JimMerioles\LaravelDevExtras\RepositoryMaker;
-use JimMerioles\LaravelDevExtras\RepositoryMakeCommand;
+use JimMerioles\LaravelDevExtras\Console\MakeRepository\RepositoryMaker;
+use JimMerioles\LaravelDevExtras\Console\MakeRepository\RepositoryMakeCommand;
 
 class RepositoryMakeCommandTest extends TestCase
 {
