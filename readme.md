@@ -10,7 +10,7 @@ Collection of Extra artisan console commands and helpers that is useful when dev
 
 ## Installation
 
-To get the latest version of Laravel Markdown, simply require the project using Composer:
+To get the latest version of Laravel Dev Extras, simply require the project using Composer:
 ```
 $ composer require --dev jim-merioles/laravel-dev-extras
 ```
