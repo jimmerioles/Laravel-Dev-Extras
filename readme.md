@@ -59,7 +59,7 @@ Psy Shell v0.7.2 (PHP 7.0.11-1+deb.sury.org~trusty+1 — cli) by Justin Hileman
 
 ## Contributing
 
-Very open for suggestions and request. Please request an [issue](https://github.com/JimMerioles/Laravel-Dev-Extras/issues) or by pull requests.
+Very open for suggestions and request. Please request an [issue](https://github.com/JimMerioles/Laravel-Dev-Extras/issues) or by [pull requests](/JimMerioles/Laravel-Dev-Extras/pull/new/master).
 
 ## Security Vulnerabilities
 
