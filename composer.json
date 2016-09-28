@@ -34,15 +34,15 @@
     "autoload": {
         "psr-4": {
             "JimMerioles\\LaravelDevExtras\\": "src/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "JimMerioles\\LaravelDevExtrasTests\\": "tests/"
         },
         "files": [
             "src/Helpers/helpers.php"
         ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "JimMerioles\\LaravelDevExtrasTests\\": "tests/"
+        }
     },
     "prefer-stable": true
 }
