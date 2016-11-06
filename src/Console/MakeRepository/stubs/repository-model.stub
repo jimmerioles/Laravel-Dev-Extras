@@ -1,0 +1,27 @@
+<?php
+
+namespace DummyNamespace;
+
+use DummyModel;
+
+class DummyClass
+{
+    /**
+     * DummyModel model instance.
+     *
+     * @var DummyModel
+     */
+    protected $dummyModelVar;
+
+    /**
+     * Create a new repository instance.
+     *
+     * @param DummyModel $dummyModelVar
+     */
+    public function __construct(DummyModel $dummyModelVar)
+    {
+        $this->dummyModelVar = $dummyModelVar;
+
+        //
+    }
+}

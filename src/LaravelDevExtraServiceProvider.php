@@ -11,13 +11,12 @@
 namespace JimMerioles\LaravelDevExtras;
 
 use Illuminate\Support\ServiceProvider;
-use JimMerioles\LaravelDevExtras\Console\MakeRepository\RepositoryMaker;
 use JimMerioles\LaravelDevExtras\Console\MakeRepository\RepositoryMakeCommand;
 
 /**
- * Class LaravelDevExtrasServiceProvider
+ * Class LaravelDevExtrasServiceProvider registers needed bindings into Laravel IoC.
  *
- * @since Class available since Release 0.1.0
+ * @since Class available since Release v0.1.0
  */
 class LaravelDevExtrasServiceProvider extends ServiceProvider
 {
@@ -46,7 +45,7 @@ class LaravelDevExtrasServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->singleton('command.repository.make', function ($app) {
-            return new RepositoryMakeCommand(new RepositoryMaker($app['files']));
+            return new RepositoryMakeCommand($app['files']);
         });
 
         $this->commands('command.repository.make');

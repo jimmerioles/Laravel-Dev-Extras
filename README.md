@@ -15,7 +15,7 @@ To get the latest version of Laravel Dev Extras, simply require the project usin
 $ composer require --dev jim-merioles/laravel-dev-extras
 ```
 
-Once installed, you need to register the service provider. Open up `config/app.php` and add the following to the `providers` key.
+Once installed, you need to register the service provider. Open up `config/app.php` and add the following to the `providers` key:
 ```
 /*
  * Package Service Providers...
@@ -26,14 +26,69 @@ JimMerioles\LaravelDevExtras\LaravelDevExtrasServiceProvider::class,
 ##Features:
 
 ###Repository Make Command: 
-Creates a repository class for a model.
+Generates a repository class for a model.
 
 ####Scenario:
-When creating repository class for a model, adhering to Repository Design Pattern.
+Most of the time our code screams for a better architecture, and often we want our models to adhere to Repository Design Pattern for some reasons; for better integration with caching and other stuffs.
 
 ####Usage:
 ```
-$ php artisan make:repository FooRepository [--path=path/to/custom/repositories/directory/]
+$ php artisan make:repository FooRepository
+```
+######Creates:
+```
+<?php
+
+namespace App\Repositories;
+
+class FooRepository
+{
+    /**
+     * Create a new repository instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        //
+    }
+}
+```
+
+#####Model Option
+Automatic model scaffold within the repository class.
+```
+$ php artisan make:repository FooRepository --model=Foo
+```
+######Creates:
+```
+<?php
+
+namespace App\Repositories;
+
+use Foo;
+
+class FooRepository
+{
+    /**
+     * Foo model instance.
+     *
+     * @var Foo
+     */
+    protected $foo;
+
+    /**
+     * Create a new repository instance.
+     *
+     * @param Foo $foo
+     */
+    public function __construct(Foo $foo)
+    {
+        $this->foo = $foo;
+
+        //
+    }
+}
 ```
 
 ###Database Listener Helper:
@@ -47,7 +102,7 @@ DB::listen(function ($event) {
 ```
 
 ####Scenario:
-When tinkering with your database and eloquent models using `$ php artisan tinker`, you might want to listen and dump for sql queries, bindings and execution time to inspect or even just to verify if your cache works when no query has been made.
+Most of the time when tinkering with your database and eloquent models using `$ php artisan tinker`, you might want to listen for and dump sql queries, bindings and execution time to inspect or even just to verify if your cache works when no query has been made.
 
 ####Usage:
 ```
@@ -55,7 +110,7 @@ Psy Shell v0.7.2 (PHP 7.0.11-1+deb.sury.org~trusty+1 — cli) by Justin Hileman
 >>> db()
 ```
 
-**Other useful features coming really soon..** :bowtie: **Have any suggestions? Please do contribute.** :)
+**Other useful features coming really soon..** :bowtie: **Have ny suggestions? Please do contribute.** :)
 
 ## Contributing
 

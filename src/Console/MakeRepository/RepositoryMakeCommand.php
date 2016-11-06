@@ -10,23 +10,23 @@
 
 namespace JimMerioles\LaravelDevExtras\Console\MakeRepository;
 
-use Illuminate\Console\Command;
+use Illuminate\Console\GeneratorCommand;
+use Symfony\Component\Console\Input\InputOption;
 
 /**
- * Class RepositoryMakeCommand
+ * Class RepositoryMakeCommand generates repository class.
  *
- * @since Class available since Release 0.1.0
+ * @author Jim Wisley Merioles <jimwisleymerioles@gmail.com>
+ * @since Class available since Release v0.2.2
  */
-class RepositoryMakeCommand extends Command
+class RepositoryMakeCommand extends GeneratorCommand
 {
     /**
-     * The name and signature of the console command.
+     * The console command name.
      *
      * @var string
      */
-    protected $signature = 'make:repository
-                            {name : Name of the class.}
-                            {--path=app/Repositories/ : Path to create repository.}';
+    protected $name = 'make:repository';
 
     /**
      * The console command description.
@@ -36,70 +36,78 @@ class RepositoryMakeCommand extends Command
     protected $description = 'Create a new repository class';
 
     /**
-     * RepositoryMake instance.
+     * The type of class being generated.
      *
-     * @var
+     * @var string
      */
-    protected $repositoryMaker;
+    protected $type = 'Repository';
 
     /**
-     * Create a new command instance.
+     * Get the stub file for the generator.
      *
-     * @param RepositoryMaker $repositoryMaker
+     * @return string
      */
-    public function __construct(RepositoryMaker $repositoryMaker)
+    protected function getStub()
     {
-        parent::__construct();
-
-        $this->repositoryMaker = $repositoryMaker;
-    }
-
-    /**
-     * Execute the console command.
-     *
-     * @return mixed
-     */
-    public function handle()
-    {
-        $path = $this->getPathWithFilename();
-
-        if ($this->repositoryMaker->make($path)) {
-            return $this->info($path . ' successfully created!');
+        if ($this->option('model')) {
+            return __DIR__ . '/stubs/repository-model.stub';
         }
 
-        return $this->error($path . ' not created!');
+        return __DIR__ . '/stubs/repository.stub';
     }
 
     /**
-     * Get complete path with filename.
+     * Get the default namespace for the class.
      *
+     * @param  string $rootNamespace
      * @return string
      */
-    protected function getPathWithFilename()
+    protected function getDefaultNamespace($rootNamespace)
     {
-        return $this->getPath() . $this->argument('name') . '.php';
+        return $rootNamespace . '\Repositories';
     }
 
     /**
-     * Get path only.
+     * Get the console command options.
      *
-     * @return string
+     * @return array
      */
-    protected function getPath()
+    protected function getOptions()
     {
-        $path = $this->option('path');
-
-        return $this->normalizePath($path);
+        return [
+            ['model', 'm', InputOption::VALUE_OPTIONAL, 'Create repository based on model.'],
+        ];
     }
 
     /**
-     * Normalize path to see to it that it ends with forward slash.
+     * Build the class with the given name.
      *
-     * @param $path
+     * @param  string $name
      * @return string
      */
-    protected function normalizePath($path)
+    protected function buildClass($name)
     {
-        return (ends_with($path, '/')) ? $path : $path . '/';
+        $stub = parent::buildClass($name);
+
+        if ($this->option('model')) {
+            $stub = $this->replaceModel($stub, $this->option('model'));
+        }
+
+        return $stub;
+    }
+
+    /**
+     * Replace the model name and variable declarations for the given stub.
+     *
+     * @param $stub
+     * @param $model
+     * @return $this
+     */
+    protected function replaceModel($stub, $model)
+    {
+        $stub = str_replace('DummyModel', $model, $stub);
+        $stub = str_replace('dummyModelVar', strtolower($model), $stub);
+
+        return $stub;
     }
 }
