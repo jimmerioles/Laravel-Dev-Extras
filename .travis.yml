@@ -10,3 +10,7 @@ php:
 install:
 # Install composer dependencies with --no-interaction to avoid halts.
   - composer install --no-interaction
+
+# The Trusty Build Environment
+dist: trusty
+sudo: required
