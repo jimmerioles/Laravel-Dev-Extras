@@ -8,6 +8,8 @@
 
 Collection of Extra artisan console commands and helpers that is useful when developing web applications using Laravel Framework.
 
+This Laravel package provide artisan developers with useful developement commands and helpers that are not included in Laravel by default.
+
 ## Installation
 
 To get the latest version of Laravel Dev Extras, simply require the project using Composer:
@@ -23,19 +25,19 @@ Once installed, you need to register the service provider. Open up `config/app.p
 JimMerioles\LaravelDevExtras\LaravelDevExtrasServiceProvider::class,
 ```
 
-##Features:
+## Features:
 
-###Repository Make Command: 
+### Repository Make Command: 
 Generates a repository class for a model.
 
-####Scenario:
+#### Scenario:
 Most of the time our code screams for a better architecture, and often we want our models to adhere to Repository Design Pattern for some reasons; for better integration with caching and other stuffs.
 
-####Usage:
+#### Usage:
 ```
 $ php artisan make:repository FooRepository
 ```
-######Creates:
+###### Creates:
 ```
 <?php
 
@@ -55,12 +57,12 @@ class FooRepository
 }
 ```
 
-#####Model Option
+##### Model Option
 Automatic model scaffold within the repository class.
 ```
 $ php artisan make:repository FooRepository --model=Foo
 ```
-######Creates:
+###### Creates:
 ```
 <?php
 
@@ -91,7 +93,7 @@ class FooRepository
 }
 ```
 
-###Database Listener Helper:
+### Database Listener Helper:
 Alias for:
 ```
 DB::listen(function ($event) {
@@ -101,10 +103,10 @@ DB::listen(function ($event) {
 });
 ```
 
-####Scenario:
+#### Scenario:
 Most of the time when tinkering with your database and eloquent models using `$ php artisan tinker`, you might want to listen for and dump sql queries, bindings and execution time to inspect or even just to verify if your cache works when no query has been made.
 
-####Usage:
+#### Usage:
 ```
 Psy Shell v0.7.2 (PHP 7.0.11-1+deb.sury.org~trusty+1 — cli) by Justin Hileman
 >>> db()
