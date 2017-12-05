@@ -6,8 +6,6 @@
 [![Packagist](https://img.shields.io/packagist/dt/jim-merioles/laravel-dev-extras.svg?label=Total%20Downloads)](https://packagist.org/packages/jim-merioles/laravel-dev-extras/stats)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg?label=Open%20Source%20License)](https://github.com/JimMerioles/Laravel-Dev-Extras/blob/master/LICENSE.txt)
 
-Collection of Extra artisan console commands and helpers that is useful when developing web applications using Laravel Framework.
-
 This Laravel package provide artisan developers with useful developement commands and helpers that are not included in Laravel by default.
 
 ## Installation
