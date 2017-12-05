@@ -109,10 +109,8 @@ Most of the time when tinkering with your database and eloquent models using `$ 
 #### Usage:
 ```
 Psy Shell v0.7.2 (PHP 7.0.11-1+deb.sury.org~trusty+1 — cli) by Justin Hileman
->>> db()
+>>> db() // dumps queries, bindings, and execution time
 ```
-
-**Other useful features coming really soon..** :bowtie: **Have ny suggestions? Please do contribute.** :)
 
 ## Contributing
 
